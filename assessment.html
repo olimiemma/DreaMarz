@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security & Data Readiness Diagnostic | DreaMarz</title>
+  <meta name="description" content="Take the free 2-minute DreaMarz Cybersecurity & Data Maturity Diagnostic. Benchmark your threat posture, compliance audit readiness, and data pipeline resiliency.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-link" aria-label="DreaMarz Home">
+        <img src="assets/images/logo.png" alt="DreaMarz Logo" class="brand-logo-img">
+        <div class="brand-meta">
+          <span class="brand-name">DreaMarz <span class="brand-star">✦</span></span>
+          <span class="brand-tagline">Cybersecurity &bull; Data Intelligence</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Overview</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="assessment.html" class="nav-link active">Readiness Diagnostic</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="assessment.html" class="btn btn-secondary btn-sm">Free Diagnostic</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Book Consultation</a>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open mobile menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div>
+      <div class="drawer-header">
+        <div class="brand-meta">
+          <span class="brand-name">DreaMarz <span class="brand-star">✦</span></span>
+          <span class="brand-tagline">Security + Data</span>
+        </div>
+        <button class="drawer-close" aria-label="Close menu">&times;</button>
+      </div>
+      <ul class="drawer-links">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="assessment.html">Readiness Diagnostic</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:0.75rem;">
+      <a href="assessment.html" class="btn btn-secondary" style="width:100%;">Readiness Diagnostic</a>
+      <a href="contact.html" class="btn btn-primary" style="width:100%;">Schedule Consultation</a>
+    </div>
+  </aside>
+
+  <!-- Diagnostic Header -->
+  <section class="section-padding" style="padding-bottom: 2rem;">
+    <div class="container text-center">
+      <div class="section-header">
+        <div class="pill">2-Minute Interactive Assessment</div>
+        <h1>Cybersecurity &amp; Data <span class="gradient-text">Maturity Diagnostic</span></h1>
+        <p class="section-subtitle">
+          Evaluate your organization across 5 critical dimensions: threat monitoring, compliance readiness, incident forensics, data pipelines, and executive dashboards.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Quiz Container -->
+  <section class="container" style="margin-bottom: 6rem;">
+    <div class="assessment-container">
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill"></div>
+      </div>
+
+      <!-- Question 1: Threat Monitoring -->
+      <div class="quiz-step active" id="step-0">
+        <span class="pill" style="margin-bottom: 1rem;">Domain 1 of 5 &bull; Security Analytics</span>
+        <h3 class="quiz-question-title">How does your organization monitor security threats and access anomalies?</h3>
+        <p class="quiz-question-sub">Select the description that most accurately matches your current setup:</p>
+
+        <div class="quiz-options" data-question="q1">
+          <div class="quiz-option-card" data-score="1">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Ad-hoc or Decentralized Logs</h4>
+              <p>Logs live across cloud consoles and individual servers with no centralized SIEM; we only review logs when something breaks.</p>
+            </div>
+          </div>
+
+          <div class="quiz-option-card selected" data-score="2">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Basic Log Ingestion with High Noise</h4>
+              <p>We send logs to a central tool (e.g. CloudWatch, basic Datadog), but alerts are noisy, false-positive heavy, and frequently ignored.</p>
+            </div>
+          </div>
+
+          <div class="quiz-option-card" data-score="3">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Managed SIEM with Detection Rules</h4>
+              <p>Active SIEM (Splunk, Elastic, or Sentinel) with tuned detection rules and designated engineers handling high-severity escalations.</p>
+            </div>
+          </div>
+
+          <div class="quiz-option-card" data-score="4">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Continuous Behavioral Telemetry &amp; Automated SOAR</h4>
+              <p>Advanced behavioral anomaly modeling, real-time threat intelligence correlation, and automated containment playbooks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 2: IT Audit & GRC -->
+      <div class="quiz-step" id="step-1">
+        <span class="pill" style="margin-bottom: 1rem;">Domain 2 of 5 &bull; IT Audit &amp; Compliance</span>
+        <h3 class="quiz-question-title">What is your current posture regarding regulatory compliance (SOC 2, ISO 27001, HIPAA)?</h3>
+        <p class="quiz-question-sub">Select your team's compliance and audit status:</p>
+
+        <div class="quiz-options" data-question="q2">
+          <div class="quiz-option-card" data-score="1">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>No Formal Framework Implemented</h4>
+              <p>We do not currently have SOC 2 or ISO certification; customer security questionnaires are handled manually and painfully.</p>
+            </div>
+          </div>
+
+          <div class="quiz-option-card selected" data-score="2">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Impending Audit or Manual Checklists</h4>
+              <p>Enterprise prospects require SOC 2 / ISO soon, but we rely on spreadsheets and manual screenshot hunting for evidence.</p>
+            </div>
+          </div>
+
+          <div class="quiz-option-card" data-score="3">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Certified with Semi-Automated Evidence</h4>
+              <p>We have achieved SOC 2 Type I or II using a compliance platform, but remediations and vendor reviews still require significant manual overhead.</p>
+            </div>
+          </div>
+
+          <div class="quiz-option-card" data-score="4">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Continuous Automated Compliance Pipeline</h4>
+              <p>Infrastructure as code, automated continuous control testing, zero-trust IAM policies, and clean auditor sign-offs year over year.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 3: Incident Forensics -->
+      <div class="quiz-step" id="step-2">
+        <span class="pill" style="margin-bottom: 1rem;">Domain 3 of 5 &bull; Incident Forensics</span>
+        <h3 class="quiz-question-title">If an endpoint or database was breached today, how prepared is your response?</h3>
+        <p class="quiz-question-sub">Evaluate your forensic reconstruction readiness:</p>
+
+        <div class="quiz-options" data-question="q3">
+          <div class="quiz-option-card" data-score="1">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Unprepared / No Runbook</h4>
+              <p>No written incident response plan, forensic data retention policies, or assigned technical lead for breach investigation.</p>
+            </div>
+          </div>
+
+          <div class="quiz-option-card selected" data-score="2">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Basic Runbook, Untested Forensics</h4>
+              <p>We have a generic incident response document, but haven't performed forensic drills, memory capture, or data exposure blast radius checks.</p>
+            </div>
+          </div>
+
+          <div class="quiz-option-card" data-score="3">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Trained Response Team with Log Trails</h4>
+              <p>Incident playbooks are documented; engineers know how to isolate compromised hosts and preserve cloud audit trails.</p>
+            </div>
+          </div>
+
+          <div class="quiz-option-card" data-score="4">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Institutional Forensics &amp; Retainer Readiness</h4>
+              <p>Complete chain of custody preservation, automated memory/disk snapshotting, forensic playbooks, and rehearsed tabletop simulations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 4: Data Pipelines & Quality -->
+      <div class="quiz-step" id="step-3">
+        <span class="pill" style="margin-bottom: 1rem;">Domain 4 of 5 &bull; Data Pipelines</span>
+        <h3 class="quiz-question-title">How mature is your data infrastructure (ETL/ELT, cleaning, warehouse)?</h3>
+        <p class="quiz-question-sub">Assess the health and reliability of your data flows:</p>
+
+        <div class="quiz-options" data-question="q4">
+          <div class="quiz-option-card" data-score="1">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Disjointed Silos &amp; CSV Exports</h4>
+              <p>Data is trapped in disconnected SaaS tools and production databases; reports are cobbled together manually in Excel.</p>
+            </div>
+          </div>
+
+          <div class="quiz-option-card selected" data-score="2">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Fragile Custom Scripts</h4>
+              <p>Basic pipelines move data, but scripts fail frequently on schema changes, duplicate records exist, and data hygiene is inconsistent.</p>
+            </div>
+          </div>
+
+          <div class="quiz-option-card" data-score="3">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Modern Data Warehouse (Snowflake / BigQuery)</h4>
+              <p>Centralized cloud warehouse with automated ingestion; dbt transformations in place with baseline data quality checks.</p>
+            </div>
+          </div>
+
+          <div class="quiz-option-card" data-score="4">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Resilient, Governed Real-Time Pipelines</h4>
+              <p>High-throughput fault-tolerant pipeline orchestration, automated schema validation, PII tokenization, and sub-minute data freshness.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 5: BI Dashboards & Decision Intelligence -->
+      <div class="quiz-step" id="step-4">
+        <span class="pill" style="margin-bottom: 1rem;">Domain 5 of 5 &bull; Visualization &amp; Dashboards</span>
+        <h3 class="quiz-question-title">How easily can executives and operators extract clear insight from your systems?</h3>
+        <p class="quiz-question-sub">Evaluate visibility across business and security performance:</p>
+
+        <div class="quiz-options" data-question="q5">
+          <div class="quiz-option-card" data-score="1">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Blind Spots / No Real-Time Dashboards</h4>
+              <p>Leadership waits days or weeks for end-of-month manual reports; zero cross-system visibility between security posture and business KPIs.</p>
+            </div>
+          </div>
+
+          <div class="quiz-option-card selected" data-score="2">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Scattered Tool-Specific Graphs</h4>
+              <p>Each SaaS tool has its own dashboard, but nobody has a unified single-pane-of-glass; metrics often contradict one another.</p>
+            </div>
+          </div>
+
+          <div class="quiz-option-card" data-score="3">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Unified BI Portal (Tableau / Power BI)</h4>
+              <p>Central executive dashboard modeling company KPIs, with defined user permissions and daily automated refreshes.</p>
+            </div>
+          </div>
+
+          <div class="quiz-option-card" data-score="4">
+            <div class="quiz-radio-indicator"></div>
+            <div class="quiz-option-text">
+              <h4>Unified Security &amp; Executive Intelligence Platform</h4>
+              <p>Live operational and threat telemetry correlated in real-time, predictive threshold alerting, and instant drill-downs for board and C-suite.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results View -->
+      <div class="quiz-step" id="step-results">
+        <div class="results-card">
+          <div class="pill" style="margin-bottom: 1rem;">Diagnostic Completed</div>
+          <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Your Organizational Maturity Score</h2>
+          <p style="color: var(--text-secondary);">Calculated across security telemetry, audit readiness, and data pipeline integrity.</p>
+
+          <div class="results-gauge">
+            <span class="results-score-big" id="calc-score-val">65%</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Composite Score</span>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <span class="pill" id="calc-tier-val" style="font-size: 1rem; padding: 0.5rem 1.25rem;">Managed / Growth Ready</span>
+            <p id="calc-summary-text" style="margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; font-size: 1.05rem;">
+              Solid foundational controls. Critical gap: unifying siloed cloud logs with executive BI dashboards to eliminate blind spots.
+            </p>
+          </div>
+
+          <!-- Domain Breakdown Bars -->
+          <div class="results-breakdown-grid">
+            <div class="domain-score-box">
+              <div class="domain-header">
+                <span>Threat Telemetry &amp; SIEM</span>
+                <span style="color: var(--primary);">Domain 1</span>
+              </div>
+              <div class="domain-bar"><div class="domain-bar-fill" id="bar-threat" style="width: 50%;"></div></div>
+            </div>
+
+            <div class="domain-score-box">
+              <div class="domain-header">
+                <span>IT Audit &amp; GRC Compliance</span>
+                <span style="color: var(--primary);">Domain 2</span>
+              </div>
+              <div class="domain-bar"><div class="domain-bar-fill" id="bar-grc" style="width: 50%;"></div></div>
+            </div>
+
+            <div class="domain-score-box">
+              <div class="domain-header">
+                <span>Incident Forensics &amp; Response</span>
+                <span style="color: var(--primary);">Domain 3</span>
+              </div>
+              <div class="domain-bar"><div class="domain-bar-fill" id="bar-forensics" style="width: 50%;"></div></div>
+            </div>
+
+            <div class="domain-score-box">
+              <div class="domain-header">
+                <span>Data Pipelines &amp; Hygiene</span>
+                <span style="color: var(--primary);">Domain 4</span>
+              </div>
+              <div class="domain-bar"><div class="domain-bar-fill" id="bar-data" style="width: 50%;"></div></div>
+            </div>
+
+            <div class="domain-score-box" style="grid-column: 1 / -1;">
+              <div class="domain-header">
+                <span>Executive Dashboards &amp; Visualization</span>
+                <span style="color: var(--primary);">Domain 5</span>
+              </div>
+              <div class="domain-bar"><div class="domain-bar-fill" id="bar-dashboards" style="width: 50%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Immediate Action CTA -->
+          <div style="background: rgba(203,0,254,0.06); border: 1px solid var(--border-focus); border-radius: var(--radius-lg); padding: 2rem; margin-top: 2rem;">
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Recommended Next Step</h3>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+              Review these results directly with DreaMarz practice leads Joanna Chishakwe (Cybersecurity) and Emmanuel Kasigazi (Data Intelligence) to receive a tailored, step-by-step remediation roadmap.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+              <a href="contact.html?source=diagnostic" class="btn btn-primary btn-lg">Schedule Debrief Consultation &rarr;</a>
+              <button onclick="window.print()" class="btn btn-secondary btn-lg">Save Diagnostic Summary</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quiz Navigation Buttons -->
+      <div class="quiz-nav-row" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">
+        <button id="quiz-prev" class="btn btn-outline" style="visibility: hidden;">&larr; Previous Question</button>
+        <button id="quiz-next" class="btn btn-primary">Next Step &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-link">
+            <img src="assets/images/logo.png" alt="DreaMarz Logo" class="brand-logo-img">
+            <div class="brand-meta">
+              <span class="brand-name">DreaMarz <span class="brand-star">✦</span></span>
+              <span class="brand-tagline">Cybersecurity &bull; Data Intelligence</span>
+            </div>
+          </a>
+          <p>
+            Where cybersecurity meets data intelligence. Pairing hands-on threat defense with advanced analytics and visualization under one roof.
+          </p>
+          <div class="pill" style="font-size:0.75rem;">
+            <span>Delaware LLC &bull; Corporate Entity</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#threat-monitoring">Security Analytics &amp; Threat Monitoring</a></li>
+            <li><a href="services.html#it-audit">IT Audit &amp; GRC Compliance</a></li>
+            <li><a href="services.html#investigations">Investigations &amp; Forensics</a></li>
+            <li><a href="services.html#data-analytics">Dashboards &amp; Visualization</a></li>
+            <li><a href="services.html#data-services">Data Pipelines &amp; Engineering</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About DreaMarz</a></li>
+            <li><a href="about.html#leadership">Leadership Team</a></li>
+            <li><a href="about.html#values">Core Values</a></li>
+            <li><a href="assessment.html">Maturity Diagnostic</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Trust &amp; Governance</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#frameworks">SOC 2 Type II Readiness</a></li>
+            <li><a href="services.html#frameworks">ISO/IEC 27001 Alignment</a></li>
+            <li><a href="services.html#frameworks">NIST CSF Implementation</a></li>
+            <li><a href="services.html#frameworks">HIPAA Data Protection</a></li>
+            <li><a href="contact.html#nda">Mutual NDA Requests</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span class="current-year">2026</span> DreaMarz, LLC. All rights reserved.
+        </div>
+        <div class="footer-legal-notice">
+          DreaMarz, LLC is a registered Delaware limited liability company.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/assessment.js"></script>
+</body>
+</html>
+
